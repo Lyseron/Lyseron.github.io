@@ -4,243 +4,506 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lyseron Abergel | Portfolio</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #fff8fb;
+      background: #fff9fc;
       color: #2f2f2f;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
+    a {
+      color: #b04b7a;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
     header {
-      text-align: center;
-      padding: 70px 20px 50px;
-      background: #f7dce8;
+      position: relative;
+      color: white;
+      background:
+        linear-gradient(rgba(80, 35, 58, 0.55), rgba(80, 35, 58, 0.55)),
+        url("assets/background.jpg") center/cover no-repeat;
+      padding: 70px 20px 55px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 42px;
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      text-align: left;
     }
 
-    header p {
-      margin-top: 12px;
-      font-size: 18px;
+    .hero img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
     }
 
+    .hero-text {
+      max-width: 620px;
+    }
+
+    .hero-text h1 {
+      margin: 0 0 8px;
+      font-size: 2.5rem;
+    }
+
+    .hero-text p {
+      margin: 0 0 14px;
+      font-size: 1.05rem;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-links a {
+      background: rgba(255, 255, 255, 0.18);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .hero-links a:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    /* NAV */
     nav {
-      text-align: center;
-      padding: 18px;
-      background: white;
-      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 249, 252, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #f0d8e5;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      padding: 12px 10px;
     }
 
     nav a {
-      margin: 0 12px;
-      color: #b84c7d;
-      text-decoration: none;
       font-weight: bold;
+      color: #a44572;
     }
 
+    /* SECTIONS */
     section {
-      max-width: 950px;
-      margin: auto;
-      padding: 45px 20px;
+      padding: 34px 0;
     }
 
-    h2 {
-      color: #b84c7d;
-      font-size: 28px;
-      margin-bottom: 20px;
+    section h2 {
+      margin: 0 0 16px;
+      color: #b04b7a;
+      font-size: 1.8rem;
     }
 
     .card {
       background: white;
-      padding: 22px;
-      margin-bottom: 20px;
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+      border: 1px solid #f6e4ed;
+    }
+
+    /* ABOUT */
+    .about p {
+      margin: 0 0 10px;
+    }
+
+    .about p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .skill-item {
+      background: white;
+      border: 1px solid #f6e4ed;
       border-radius: 16px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+      padding: 16px 18px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
     }
 
-    .card h3 {
-      margin-top: 0;
-      color: #2f2f2f;
-    }
-
-    .skills {
+    .skill-top {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
       gap: 10px;
+      margin-bottom: 10px;
     }
 
-    .skills span {
-      background: #f7dce8;
-      color: #7c2f55;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 14px;
+    .skill-name {
+      font-weight: bold;
+    }
+
+    .skill-level-text {
+      font-size: 0.9rem;
+      color: #8d5f77;
+    }
+
+    .dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #f1d9e4;
+    }
+
+    .dot.filled {
+      background: #c45d8f;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .project-card {
+      background: white;
+      border: 1px solid #f6e4ed;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    .project-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+    }
+
+    .project-card p {
+      margin: 0 0 10px;
+      font-size: 0.96rem;
+    }
+
+    .project-card .skills-line {
+      color: #8d5f77;
+      font-size: 0.92rem;
+      margin-bottom: 12px;
+    }
+
+    .project-card .project-link {
+      display: inline-block;
+      margin-top: 4px;
+      font-weight: bold;
+    }
+
+    /* CONTACT */
+    .contact p {
+      margin: 8px 0;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      background: #f7dce8;
-      margin-top: 40px;
+      padding: 20px;
+      color: #8d5f77;
+      font-size: 0.95rem;
     }
 
-    footer a {
-      color: #7c2f55;
-      font-weight: bold;
-      text-decoration: none;
+    @media (max-width: 700px) {
+      .hero {
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+
+      .hero-links {
+        justify-content: center;
+      }
+
+      section {
+        padding: 28px 0;
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>Hi, I'm Lyseron</h1>
-    <p>Student at 42 Paris · C/C++ · Swift · Arduino · Interactive Prototyping</p>
+    <div class="container hero">
+      <img src="assets/profile.jpg" alt="Profile photo of Lyseron Abergel">
+
+      <div class="hero-text">
+        <h1>Hi, I'm Lyseron</h1>
+        <p>Student at 42 Paris · C/C++ · Swift · Arduino · Interactive Prototyping</p>
+
+        <div class="hero-links">
+          <a href="https://github.com/Lyseron" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/lyseron-abergel/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
   </header>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <div class="container nav-inner">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <section id="about">
-    <h2>About me</h2>
-    <div class="card">
-      <p>
-        I'm a student at 42 Paris, currently learning software development through
-        project-based programming.
-      </p>
-      <p>
-        I mainly work with C and C++, and I'm also exploring Swift, Arduino,
-        electronics, and interactive prototyping. I enjoy building projects that
-        mix code, creativity, and real-world interaction.
-      </p>
+    <div class="container">
+      <h2>About me</h2>
+      <div class="card about">
+        <p>
+          I'm a student at 42 Paris, currently learning software development through project-based programming.
+        </p>
+        <p>
+          I mainly work with C and C++, and I'm also exploring Swift, Arduino, electronics, and interactive prototyping.
+          I enjoy building projects that mix code, creativity, and real-world interaction.
+        </p>
+      </div>
     </div>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>C</span>
-      <span>C++</span>
-      <span>Unix</span>
-      <span>Git</span>
-      <span>Makefile</span>
-      <span>Memory Management</span>
-      <span>Parsing</span>
-      <span>Threads</span>
-      <span>Arduino</span>
-      <span>Swift</span>
-      <span>HTML/CSS</span>
+    <div class="container">
+      <h2>Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="skill-top">
+            <span class="skill-name">C</span>
+            <span class="skill-level-text">Advanced</span>
+          </div>
+          <div class="dots">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-top">
+            <span class="skill-name">C++</span>
+            <span class="skill-level-text">Intermediate</span>
+          </div>
+          <div class="dots">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-top">
+            <span class="skill-name">Unix / Shell</span>
+            <span class="skill-level-text">Intermediate</span>
+          </div>
+          <div class="dots">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-top">
+            <span class="skill-name">Git / GitHub</span>
+            <span class="skill-level-text">Intermediate</span>
+          </div>
+          <div class="dots">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-top">
+            <span class="skill-name">Swift</span>
+            <span class="skill-level-text">Beginner</span>
+          </div>
+          <div class="dots">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-top">
+            <span class="skill-name">Arduino / Electronics</span>
+            <span class="skill-level-text">Beginner+</span>
+          </div>
+          <div class="dots">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="projects">
-    <h2>42 Projects</h2>
+    <div class="container">
+      <h2>Projects</h2>
 
-    <div class="card">
-      <h3>Libft</h3>
-      <p>
-        My first C library. I learned how standard C functions work internally,
-        and how to write cleaner, reusable code.
-      </p>
-      <p><strong>Skills:</strong> C basics · pointers · memory allocation · strings · linked lists</p>
-    </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Libft</h3>
+          <p>
+            My first C library. I learned how standard C functions work internally and how to write cleaner, reusable code.
+          </p>
+          <p class="skills-line"><strong>Skills:</strong> C · pointers · memory allocation · strings · linked lists</p>
+        </div>
 
-    <div class="card">
-      <h3>Pipex</h3>
-      <p>
-        A Unix project that reproduces the behavior of shell pipes.
-        I learned how processes communicate through pipes and how to handle file descriptors.
-      </p>
-      <p><strong>Skills:</strong> C · Unix processes · pipes · fork · execve · error handling</p>
-    </div>
+        <div class="project-card">
+          <h3>ft_printf</h3>
+          <p>
+            A custom implementation of printf focused on variadic functions and formatted output in C.
+          </p>
+          <p class="skills-line"><strong>Skills:</strong> C · variadic functions · parsing · formatted output</p>
+        </div>
 
-    <div class="card">
-      <h3>so_long</h3>
-      <p>
-        A small 2D game built in C using MiniLibX.
-        I learned how to handle rendering, keyboard events, map parsing, and game logic.
-      </p>
-      <p><strong>Skills:</strong> C · MiniLibX · 2D rendering · events · flood fill</p>
-    </div>
+        <div class="project-card">
+          <h3>get_next_line</h3>
+          <p>
+            A function that reads and returns one line at a time from a file descriptor.
+          </p>
+          <p class="skills-line"><strong>Skills:</strong> C · file descriptors · static variables · memory management</p>
+        </div>
 
-    <div class="card">
-      <h3>Philosophers</h3>
-      <p>
-        A concurrency project based on the dining philosophers problem.
-        I learned how to work with threads, mutexes, shared data, and timing issues.
-      </p>
-      <p><strong>Skills:</strong> C · threads · mutexes · concurrency · synchronization</p>
-    </div>
+        <div class="project-card">
+          <h3>Pipex</h3>
+          <p>
+            A Unix project that reproduces the behavior of shell pipes and helped me understand process communication.
+          </p>
+          <p class="skills-line"><strong>Skills:</strong> C · pipes · fork · execve · file descriptors</p>
+        </div>
 
-    <div class="card">
-      <h3>Minishell</h3>
-      <p>
-        A simplified Unix shell built in C as a group project.
-        I mainly worked on parsing, execution flow, pipes, redirections,
-        environment variables, and signal handling.
-      </p>
-      <p><strong>Skills:</strong> C · Unix processes · parsing · execution · pipes · teamwork</p>
-    </div>
+        <div class="project-card">
+          <h3>so_long</h3>
+          <p>
+            A small 2D game built in C using MiniLibX, focused on rendering, events, map parsing, and game logic.
+          </p>
+          <p class="skills-line"><strong>Skills:</strong> C · MiniLibX · 2D rendering · events · flood fill</p>
+        </div>
 
-    <div class="card">
-      <h3>C++ Modules 00–04</h3>
-      <p>
-        A series of projects focused on object-oriented programming in C++.
-        I learned how to design classes, manage object lifetimes, use inheritance,
-        polymorphism, and operator overloading.
-      </p>
-      <p><strong>Skills:</strong> C++ · C++98 · OOP · classes · inheritance · polymorphism</p>
-    </div>
+        <div class="project-card">
+          <h3>Philosophers</h3>
+          <p>
+            A concurrency project based on the dining philosophers problem, with threads, mutexes, and synchronization.
+          </p>
+          <p class="skills-line"><strong>Skills:</strong> C · threads · mutexes · concurrency · synchronization</p>
+        </div>
 
-    <h2>Personal Projects</h2>
+        <div class="project-card">
+          <h3>Minishell</h3>
+          <p>
+            A simplified Unix shell built in C as a group project. I mainly worked on parsing, execution flow, pipes, redirections, environment variables, and signal handling.
+          </p>
+          <p class="skills-line"><strong>Skills:</strong> C · parsing · execution · pipes · redirections · teamwork</p>
+        </div>
 
-    <div class="card">
-      <h3>Swip'Art</h3>
-      <p>
-        An iOS app prototype designed to help people discover cultural activities
-        and places. Built as a group project, where I was highly involved across
-        several aspects of the app.
-      </p>
-      <p><strong>Skills:</strong> Swift · iOS · UI design · prototyping · teamwork</p>
-    </div>
+        <div class="project-card">
+          <h3>C++ Modules 00–04</h3>
+          <p>
+            A series of projects focused on object-oriented programming in C++.
+          </p>
+          <p class="skills-line"><strong>Skills:</strong> C++ · C++98 · OOP · inheritance · polymorphism</p>
+        </div>
 
-    <div class="card">
-      <h3>Interactive Light</h3>
-      <p>
-        An Arduino-based prototype that controls a light depending on movement or presence.
-        This project explores electronics, sensors, and physical interaction through code.
-      </p>
-      <p><strong>Skills:</strong> Arduino · electronics · sensors · PWM · interactive design</p>
+        <div class="project-card">
+          <h3>Swip'Art</h3>
+          <p>
+            An iOS app prototype designed to help people discover cultural activities and places. Built as a group project, where I was highly involved across several aspects of the app.
+          </p>
+          <p class="skills-line"><strong>Skills:</strong> Swift · iOS · prototyping · UI · teamwork</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Interactive Light</h3>
+          <p>
+            An Arduino-based prototype that controls a light depending on movement or presence.
+          </p>
+          <p class="skills-line"><strong>Skills:</strong> Arduino · electronics · sensors · PWM · interactive design</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>
-        GitHub:
-        <a href="https://github.com/Lyseron" target="_blank">github.com/Lyseron</a>
-      </p>
-      <p>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/lyseron-abergel/" target="_blank">
-          linkedin.com/in/lyseron-abergel
-        </a>
-      </p>
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="card contact">
+        <p><strong>GitHub:</strong> <a href="https://github.com/Lyseron" target="_blank">github.com/Lyseron</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/lyseron-abergel/" target="_blank">linkedin.com/in/lyseron-abergel</a></p>
+        <p><strong>Email:</strong> lyseron.a@gmail.com</p>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>Made by Lyseron Abergel</p>
+    <div class="container">
+      Made by Lyseron Abergel
+    </div>
   </footer>
 </body>
 </html>
