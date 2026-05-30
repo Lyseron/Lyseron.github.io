@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,12 +19,12 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background: #fff9fc;
-      color: #2f2f2f;
+      color: #30272d;
       line-height: 1.5;
     }
 
     a {
-      color: #b04b7a;
+      color: #b24d7a;
       text-decoration: none;
     }
 
@@ -33,50 +34,49 @@
 
     .container {
       width: 92%;
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
     }
 
-    /* HEADER */
     header {
       position: relative;
       color: white;
       background:
-        linear-gradient(rgba(80, 35, 58, 0.55), rgba(80, 35, 58, 0.55)),
+        linear-gradient(rgba(72, 33, 55, 0.58), rgba(72, 33, 55, 0.58)),
         url("assets/background.jpg") center/cover no-repeat;
-      padding: 70px 20px 55px;
+      padding: 62px 20px 48px;
     }
 
     .hero {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 28px;
+      gap: 30px;
       flex-wrap: wrap;
-      text-align: left;
     }
 
     .hero img {
-      width: 150px;
-      height: 150px;
+      width: 155px;
+      height: 155px;
       object-fit: cover;
       border-radius: 50%;
       border: 4px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
     }
 
     .hero-text {
-      max-width: 620px;
+      max-width: 650px;
     }
 
     .hero-text h1 {
       margin: 0 0 8px;
-      font-size: 2.5rem;
+      font-size: 2.7rem;
+      letter-spacing: -1px;
     }
 
     .hero-text p {
-      margin: 0 0 14px;
-      font-size: 1.05rem;
+      margin: 0 0 18px;
+      font-size: 1.08rem;
     }
 
     .hero-links {
@@ -85,29 +85,33 @@
       flex-wrap: wrap;
     }
 
-    .hero-links a {
-      background: rgba(255, 255, 255, 0.18);
-      color: white;
-      padding: 10px 16px;
+    .button {
+      display: inline-block;
+      padding: 10px 17px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      text-decoration: none;
       font-weight: bold;
       transition: 0.2s ease;
     }
 
-    .hero-links a:hover {
-      background: rgba(255, 255, 255, 0.28);
+    .button-light {
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.16);
     }
 
-    /* NAV */
+    .button-light:hover {
+      background: rgba(255, 255, 255, 0.28);
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
     nav {
       position: sticky;
       top: 0;
       z-index: 10;
       background: rgba(255, 249, 252, 0.96);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #f0d8e5;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #f1d7e4;
     }
 
     .nav-inner {
@@ -120,29 +124,34 @@
 
     nav a {
       font-weight: bold;
-      color: #a44572;
+      color: #9f3f6a;
+      font-size: 0.95rem;
     }
 
-    /* SECTIONS */
     section {
-      padding: 34px 0;
+      padding: 30px 0;
     }
 
     section h2 {
-      margin: 0 0 16px;
-      color: #b04b7a;
-      font-size: 1.8rem;
+      margin: 0 0 14px;
+      color: #a44572;
+      font-size: 1.85rem;
+    }
+
+    .section-subtitle {
+      margin: -6px 0 18px;
+      color: #8a6879;
+      font-size: 0.98rem;
     }
 
     .card {
       background: white;
-      border-radius: 18px;
+      border-radius: 20px;
       padding: 20px;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
-      border: 1px solid #f6e4ed;
+      box-shadow: 0 8px 24px rgba(120, 55, 88, 0.08);
+      border: 1px solid #f4ddea;
     }
 
-    /* ABOUT */
     .about p {
       margin: 0 0 10px;
     }
@@ -151,19 +160,24 @@
       margin-bottom: 0;
     }
 
-    /* SKILLS */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+      gap: 14px;
     }
 
     .skill-item {
       background: white;
-      border: 1px solid #f6e4ed;
-      border-radius: 16px;
-      padding: 16px 18px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+      border: 1px solid #f4ddea;
+      border-radius: 18px;
+      padding: 15px 17px;
+      box-shadow: 0 6px 20px rgba(120, 55, 88, 0.06);
+      transition: 0.2s ease;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(120, 55, 88, 0.11);
     }
 
     .skill-top {
@@ -179,7 +193,7 @@
     }
 
     .skill-level-text {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: #8d5f77;
     }
 
@@ -189,63 +203,86 @@
     }
 
     .dot {
-      width: 12px;
-      height: 12px;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
-      background: #f1d9e4;
+      background: #efd8e4;
     }
 
     .dot.filled {
-      background: #c45d8f;
+      background: #c65d8f;
     }
 
-    /* PROJECTS */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 15px;
     }
 
     .project-card {
       background: white;
-      border: 1px solid #f6e4ed;
-      border-radius: 18px;
+      border: 1px solid #f4ddea;
+      border-radius: 20px;
       padding: 18px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 7px 22px rgba(120, 55, 88, 0.06);
+      transition: 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(120, 55, 88, 0.12);
     }
 
     .project-card h3 {
-      margin: 0 0 8px;
+      margin: 0 0 7px;
       font-size: 1.15rem;
+      color: #30272d;
     }
 
     .project-card p {
       margin: 0 0 10px;
-      font-size: 0.96rem;
+      font-size: 0.95rem;
     }
 
-    .project-card .skills-line {
+    .skills-line {
       color: #8d5f77;
-      font-size: 0.92rem;
-      margin-bottom: 12px;
+      font-size: 0.9rem;
     }
 
-    .project-card .project-link {
+    .tag {
       display: inline-block;
-      margin-top: 4px;
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #fae8f0;
+      color: #9f3f6a;
+      font-size: 0.78rem;
       font-weight: bold;
     }
 
-    /* CONTACT */
+    .project-link {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 0.92rem;
+      font-weight: bold;
+    }
+
     .contact p {
       margin: 8px 0;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 22px;
       color: #8d5f77;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+    }
+
+    .separator {
+      width: 120px;
+      height: 1px;
+      background: #e9c7d9;
+      margin: 24px auto 8px;
     }
 
     @media (max-width: 700px) {
@@ -254,7 +291,7 @@
       }
 
       .hero-text h1 {
-        font-size: 2rem;
+        font-size: 2.1rem;
       }
 
       .hero-links {
@@ -262,7 +299,7 @@
       }
 
       section {
-        padding: 28px 0;
+        padding: 25px 0;
       }
     }
   </style>
@@ -275,11 +312,13 @@
 
       <div class="hero-text">
         <h1>Hi, I'm Lyseron</h1>
-        <p>Student at 42 Paris · C/C++ · Swift · Arduino · Interactive Prototyping</p>
+        <p>
+          Student at 42 Paris · C/C++ · Swift · Arduino · Interactive Prototyping
+        </p>
 
         <div class="hero-links">
-          <a href="https://github.com/Lyseron" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/lyseron-abergel/" target="_blank">LinkedIn</a>
+          <a class="button button-light" href="https://github.com/Lyseron" target="_blank">GitHub</a>
+          <a class="button button-light" href="https://www.linkedin.com/in/lyseron-abergel/" target="_blank">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -289,7 +328,8 @@
     <div class="container nav-inner">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
+      <a href="#projects-42">42 Projects</a>
+      <a href="#personal-projects">Personal Projects</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -297,6 +337,7 @@
   <section id="about">
     <div class="container">
       <h2>About me</h2>
+
       <div class="card about">
         <p>
           I'm a student at 42 Paris, currently learning software development through project-based programming.
@@ -312,12 +353,13 @@
   <section id="skills">
     <div class="container">
       <h2>Skills</h2>
+      <p class="section-subtitle">A visual overview of the tools and concepts I am currently practicing.</p>
 
       <div class="skills-grid">
         <div class="skill-item">
           <div class="skill-top">
             <span class="skill-name">C</span>
-            <span class="skill-level-text">Advanced</span>
+            <span class="skill-level-text">Advanced beginner</span>
           </div>
           <div class="dots">
             <span class="dot filled"></span>
@@ -331,7 +373,7 @@
         <div class="skill-item">
           <div class="skill-top">
             <span class="skill-name">C++</span>
-            <span class="skill-level-text">Intermediate</span>
+            <span class="skill-level-text">Learning</span>
           </div>
           <div class="dots">
             <span class="dot filled"></span>
@@ -387,7 +429,7 @@
         <div class="skill-item">
           <div class="skill-top">
             <span class="skill-name">Arduino / Electronics</span>
-            <span class="skill-level-text">Beginner+</span>
+            <span class="skill-level-text">Beginner</span>
           </div>
           <div class="dots">
             <span class="dot filled"></span>
@@ -401,12 +443,14 @@
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects-42">
     <div class="container">
-      <h2>Projects</h2>
+      <h2>42 Projects</h2>
+      <p class="section-subtitle">Projects completed as part of the 42 curriculum.</p>
 
       <div class="projects-grid">
         <div class="project-card">
+          <span class="tag">C Library</span>
           <h3>Libft</h3>
           <p>
             My first C library. I learned how standard C functions work internally and how to write cleaner, reusable code.
@@ -415,14 +459,16 @@
         </div>
 
         <div class="project-card">
+          <span class="tag">Formatted Output</span>
           <h3>ft_printf</h3>
           <p>
             A custom implementation of printf focused on variadic functions and formatted output in C.
           </p>
-          <p class="skills-line"><strong>Skills:</strong> C · variadic functions · parsing · formatted output</p>
+          <p class="skills-line"><strong>Skills:</strong> C · variadic functions · parsing · conversions</p>
         </div>
 
         <div class="project-card">
+          <span class="tag">File Reading</span>
           <h3>get_next_line</h3>
           <p>
             A function that reads and returns one line at a time from a file descriptor.
@@ -431,6 +477,7 @@
         </div>
 
         <div class="project-card">
+          <span class="tag">Unix</span>
           <h3>Pipex</h3>
           <p>
             A Unix project that reproduces the behavior of shell pipes and helped me understand process communication.
@@ -439,49 +486,69 @@
         </div>
 
         <div class="project-card">
+          <span class="tag">2D Game</span>
           <h3>so_long</h3>
           <p>
             A small 2D game built in C using MiniLibX, focused on rendering, events, map parsing, and game logic.
           </p>
-          <p class="skills-line"><strong>Skills:</strong> C · MiniLibX · 2D rendering · events · flood fill</p>
+          <p class="skills-line"><strong>Skills:</strong> C · MiniLibX · rendering · events · flood fill</p>
         </div>
 
         <div class="project-card">
+          <span class="tag">Concurrency</span>
           <h3>Philosophers</h3>
           <p>
             A concurrency project based on the dining philosophers problem, with threads, mutexes, and synchronization.
           </p>
-          <p class="skills-line"><strong>Skills:</strong> C · threads · mutexes · concurrency · synchronization</p>
+          <p class="skills-line"><strong>Skills:</strong> C · threads · mutexes · timing · synchronization</p>
         </div>
 
         <div class="project-card">
+          <span class="tag">Shell</span>
           <h3>Minishell</h3>
           <p>
-            A simplified Unix shell built in C as a group project. I mainly worked on parsing, execution flow, pipes, redirections, environment variables, and signal handling.
+            A simplified Unix shell built in C as a group project. I mainly worked on parsing, execution flow, pipes,
+            redirections, environment variables, and signal handling.
           </p>
-          <p class="skills-line"><strong>Skills:</strong> C · parsing · execution · pipes · redirections · teamwork</p>
+          <p class="skills-line"><strong>Skills:</strong> C · parsing · execution · pipes · teamwork</p>
         </div>
 
         <div class="project-card">
+          <span class="tag">Object-Oriented Programming</span>
           <h3>C++ Modules 00–04</h3>
           <p>
             A series of projects focused on object-oriented programming in C++.
           </p>
           <p class="skills-line"><strong>Skills:</strong> C++ · C++98 · OOP · inheritance · polymorphism</p>
         </div>
+      </div>
+    </div>
+  </section>
 
+  <div class="separator"></div>
+
+  <section id="personal-projects">
+    <div class="container">
+      <h2>Personal Projects</h2>
+      <p class="section-subtitle">Projects made to explore creative coding, prototyping, and real-world interaction.</p>
+
+      <div class="projects-grid">
         <div class="project-card">
+          <span class="tag">iOS Prototype</span>
           <h3>Swip'Art</h3>
           <p>
-            An iOS app prototype designed to help people discover cultural activities and places. Built as a group project, where I was highly involved across several aspects of the app.
+            An iOS app prototype designed to help people discover cultural activities and places.
+            Built as a group project, where I was highly involved across several aspects of the app.
           </p>
           <p class="skills-line"><strong>Skills:</strong> Swift · iOS · prototyping · UI · teamwork</p>
         </div>
 
         <div class="project-card">
+          <span class="tag">Arduino Prototype</span>
           <h3>Interactive Light</h3>
           <p>
             An Arduino-based prototype that controls a light depending on movement or presence.
+            This project explores electronics, sensors, and physical interaction through code.
           </p>
           <p class="skills-line"><strong>Skills:</strong> Arduino · electronics · sensors · PWM · interactive design</p>
         </div>
@@ -492,6 +559,7 @@
   <section id="contact">
     <div class="container">
       <h2>Contact</h2>
+
       <div class="card contact">
         <p><strong>GitHub:</strong> <a href="https://github.com/Lyseron" target="_blank">github.com/Lyseron</a></p>
         <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/lyseron-abergel/" target="_blank">linkedin.com/in/lyseron-abergel</a></p>
@@ -507,3 +575,4 @@
   </footer>
 </body>
 </html>
+```
