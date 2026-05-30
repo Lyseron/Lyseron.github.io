@@ -1,11 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Lyseron Abergel</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lyseron Abergel | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff8fb;
+      color: #2f2f2f;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px 50px;
+      background: #f7dce8;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 42px;
+    }
+
+    header p {
+      margin-top: 12px;
+      font-size: 18px;
+    }
+
+    nav {
+      text-align: center;
+      padding: 18px;
+      background: white;
+      border-bottom: 1px solid #eee;
+    }
+
+    nav a {
+      margin: 0 12px;
+      color: #b84c7d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 950px;
+      margin: auto;
+      padding: 45px 20px;
+    }
+
+    h2 {
+      color: #b84c7d;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      margin-bottom: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #2f2f2f;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skills span {
+      background: #f7dce8;
+      color: #7c2f55;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #f7dce8;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #7c2f55;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hi, I'm Lyseron</h1>
-  <p>Student at 42 Paris.</p>
+  <header>
+    <h1>Hi, I'm Lyseron</h1>
+    <p>Student at 42 Paris · C/C++ · Swift · Arduino · Interactive Prototyping</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About me</h2>
+    <div class="card">
+      <p>
+        I'm a student at 42 Paris, currently learning software development through
+        project-based programming.
+      </p>
+      <p>
+        I mainly work with C and C++, and I'm also exploring Swift, Arduino,
+        electronics, and interactive prototyping. I enjoy building projects that
+        mix code, creativity, and real-world interaction.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>C</span>
+      <span>C++</span>
+      <span>Unix</span>
+      <span>Git</span>
+      <span>Makefile</span>
+      <span>Memory Management</span>
+      <span>Parsing</span>
+      <span>Threads</span>
+      <span>Arduino</span>
+      <span>Swift</span>
+      <span>HTML/CSS</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>42 Projects</h2>
+
+    <div class="card">
+      <h3>Libft</h3>
+      <p>
+        My first C library. I learned how standard C functions work internally,
+        and how to write cleaner, reusable code.
+      </p>
+      <p><strong>Skills:</strong> C basics · pointers · memory allocation · strings · linked lists</p>
+    </div>
+
+    <div class="card">
+      <h3>Pipex</h3>
+      <p>
+        A Unix project that reproduces the behavior of shell pipes.
+        I learned how processes communicate through pipes and how to handle file descriptors.
+      </p>
+      <p><strong>Skills:</strong> C · Unix processes · pipes · fork · execve · error handling</p>
+    </div>
+
+    <div class="card">
+      <h3>so_long</h3>
+      <p>
+        A small 2D game built in C using MiniLibX.
+        I learned how to handle rendering, keyboard events, map parsing, and game logic.
+      </p>
+      <p><strong>Skills:</strong> C · MiniLibX · 2D rendering · events · flood fill</p>
+    </div>
+
+    <div class="card">
+      <h3>Philosophers</h3>
+      <p>
+        A concurrency project based on the dining philosophers problem.
+        I learned how to work with threads, mutexes, shared data, and timing issues.
+      </p>
+      <p><strong>Skills:</strong> C · threads · mutexes · concurrency · synchronization</p>
+    </div>
+
+    <div class="card">
+      <h3>Minishell</h3>
+      <p>
+        A simplified Unix shell built in C as a group project.
+        I mainly worked on parsing, execution flow, pipes, redirections,
+        environment variables, and signal handling.
+      </p>
+      <p><strong>Skills:</strong> C · Unix processes · parsing · execution · pipes · teamwork</p>
+    </div>
+
+    <div class="card">
+      <h3>C++ Modules 00–04</h3>
+      <p>
+        A series of projects focused on object-oriented programming in C++.
+        I learned how to design classes, manage object lifetimes, use inheritance,
+        polymorphism, and operator overloading.
+      </p>
+      <p><strong>Skills:</strong> C++ · C++98 · OOP · classes · inheritance · polymorphism</p>
+    </div>
+
+    <h2>Personal Projects</h2>
+
+    <div class="card">
+      <h3>Swip'Art</h3>
+      <p>
+        An iOS app prototype designed to help people discover cultural activities
+        and places. Built as a group project, where I was highly involved across
+        several aspects of the app.
+      </p>
+      <p><strong>Skills:</strong> Swift · iOS · UI design · prototyping · teamwork</p>
+    </div>
+
+    <div class="card">
+      <h3>Interactive Light</h3>
+      <p>
+        An Arduino-based prototype that controls a light depending on movement or presence.
+        This project explores electronics, sensors, and physical interaction through code.
+      </p>
+      <p><strong>Skills:</strong> Arduino · electronics · sensors · PWM · interactive design</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>
+        GitHub:
+        <a href="https://github.com/Lyseron" target="_blank">github.com/Lyseron</a>
+      </p>
+      <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/lyseron-abergel/" target="_blank">
+          linkedin.com/in/lyseron-abergel
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made by Lyseron Abergel</p>
+  </footer>
 </body>
 </html>
